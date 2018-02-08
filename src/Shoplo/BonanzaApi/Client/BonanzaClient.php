@@ -6,6 +6,7 @@ namespace Shoplo\BonanzaApi\Client;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
+use JMS\Serializer\JsonSerializationVisitor;
 use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
 use JMS\Serializer\Naming\SerializedNameAnnotationStrategy;
 use JMS\Serializer\SerializationContext;
@@ -87,12 +88,18 @@ class BonanzaClient
 	public function __construct(CredentialsInterface $credentials)
 	{
 		$this->credentials = $credentials;
+
+        $propertyNamingStrategy = new SerializedNameAnnotationStrategy(
+            new IdenticalPropertyNamingStrategy()
+        );
+
+        $visitor = new JsonSerializationVisitor($propertyNamingStrategy);
+        $visitor->setOptions(JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_HEX_AMP|JSON_UNESCAPED_UNICODE);
+
 		$this->serializer  = SerializerBuilder::create()
-		                                      ->setPropertyNamingStrategy(
-			                                      new SerializedNameAnnotationStrategy(
-				                                      new IdenticalPropertyNamingStrategy()
-			                                      )
-		                                      )
+		                                      ->setPropertyNamingStrategy($propertyNamingStrategy)
+                                              ->setSerializationVisitor($visitor)
+                                              ->addDefaultDeserializationVisitors()
 		                                      ->build();
 
 		$stack = HandlerStack::create();
