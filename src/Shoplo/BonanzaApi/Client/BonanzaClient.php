@@ -98,7 +98,7 @@ class BonanzaClient
 
 		$this->serializer  = SerializerBuilder::create()
 		                                      ->setPropertyNamingStrategy($propertyNamingStrategy)
-                                              ->setSerializationVisitor($visitor)
+                                              ->setSerializationVisitor('json', $visitor)
                                               ->addDefaultDeserializationVisitors()
 		                                      ->build();
 
