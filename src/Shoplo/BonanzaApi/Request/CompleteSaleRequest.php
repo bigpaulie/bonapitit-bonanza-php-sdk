@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation as Serializer;
 use Shoplo\BonanzaApi\Type\AddItemType;
 use Shoplo\BonanzaApi\Type\FeedbackInfoType;
 use Shoplo\BonanzaApi\Type\RequesterCredentialsType;
+use Shoplo\BonanzaApi\Type\ShipmentType;
 
 class CompleteSaleRequest
 {
@@ -38,6 +39,13 @@ class CompleteSaleRequest
      * @Serializer\Type("Shoplo\BonanzaApi\Type\FeedbackInfoType")
      */
 	public $feedbackInfo;
+
+    /**
+     * @var ShipmentType
+     *
+     * @Serializer\Type("Shoplo\BonanzaApi\Type\ShipmentType")
+     */
+    public $shipment;
 
     /**
      * @var bool

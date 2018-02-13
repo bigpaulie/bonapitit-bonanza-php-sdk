@@ -31,11 +31,4 @@ class FeedbackInfoType
      * @Serializer\Type("string")
      */
     public $targetUser;
-
-    /**
-     * @var ShipmentType
-     *
-     * @Serializer\Type("Shoplo\BonanzaApi\Type\ShipmentType")
-     */
-    public $shipment;
 }
