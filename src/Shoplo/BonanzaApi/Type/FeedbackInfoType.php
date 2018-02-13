@@ -38,22 +38,4 @@ class FeedbackInfoType
      * @Serializer\Type("Shoplo\BonanzaApi\Type\ShipmentType")
      */
     public $shipment;
-
-    /**
-     * Whether or not the order has shipped
-     * @var bool
-     *
-     * @Serializer\Type("boolean")
-     */
-    public $shipped;
-
-    /**
-     * The ID for the transaction we're dealing with.
-     * The same as orderID.
-     *
-     * @var int
-     *
-     * @Serializer\Type("integer")
-     */
-    public $transactionID;
 }

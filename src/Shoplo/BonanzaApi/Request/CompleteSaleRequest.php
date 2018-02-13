@@ -38,4 +38,21 @@ class CompleteSaleRequest
      * @Serializer\Type("Shoplo\BonanzaApi\Type\FeedbackInfoType")
      */
 	public $feedbackInfo;
+
+    /**
+     * @var bool
+     *
+     * @Serializer\Type("boolean")
+     */
+    public $shipped;
+
+    /**
+     * The ID for the transaction we're dealing with.
+     * The same as orderID.
+     *
+     * @var int
+     *
+     * @Serializer\Type("integer")
+     */
+    public $transactionID;
 }
