@@ -20,11 +20,4 @@ class NotificationEnableType
 	 * @Serializer\Type("Shoplo\BonanzaApi\Type\EventNotificationType")
 	 */
 	public $eventType;
-
-	/**
-	 * @var bool
-	 *
-	 * @Serializer\Type("boolean")
-	 */
-	public $detailed;
 }

@@ -14,4 +14,11 @@ class EventNotificationType
 	 * @var string
 	 */
 	public $eventType;
+
+    /**
+     * @var bool
+     *
+     * @Serializer\Type("boolean")
+     */
+    public $detailed;
 }
