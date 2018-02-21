@@ -15,9 +15,16 @@ class NotificationEnableType
 	public $eventEnable;
 
 	/**
-	 * @var EventNotificationType
+	 * @var string
 	 *
-	 * @Serializer\Type("Shoplo\BonanzaApi\Type\EventNotificationType")
+	 * @Serializer\Type("string")
 	 */
 	public $eventType;
+
+    /**
+     * @var bool
+     *
+     * @Serializer\Type("boolean")
+     */
+	public $detailed;
 }

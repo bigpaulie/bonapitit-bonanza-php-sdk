@@ -14,6 +14,13 @@ class ApplicationDeliveryPreferencesType
 	 */
 	public $applicationEnable;
 
+    /**
+     * @var string
+     *
+     * @Serializer\Type("string")
+     */
+	public $applicationURL;
+
 	/**
 	 * @var DeliveryURLDetailsType
 	 *
