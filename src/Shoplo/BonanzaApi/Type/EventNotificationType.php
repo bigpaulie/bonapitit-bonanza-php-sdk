@@ -2,18 +2,24 @@
 
 namespace Shoplo\BonanzaApi\Type;
 
+use JMS\Serializer\Annotation as Serializer;
+
 class EventNotificationType
 {
 
-	/**
-	 * @var string
-	 */
-	public $eventEnable;
+    /**
+     * @var string
+     *
+     * @Serializer\Type("string")
+     */
+    public $eventEnable;
 
-	/**
-	 * @var string
-	 */
-	public $eventType;
+    /**
+     * @var string
+     *
+     * @Serializer\Type("string")
+     */
+    public $eventType;
 
     /**
      * @var bool
