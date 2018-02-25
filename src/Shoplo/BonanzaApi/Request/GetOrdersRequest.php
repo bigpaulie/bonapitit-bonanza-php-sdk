@@ -13,28 +13,28 @@ class GetOrdersRequest extends SecureRequest
 	/**
 	 * @var \DateTime
 	 *
-	 * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u\Z'>")
+	 * @Serializer\Type("DateTime")
 	 */
 	public $createTimeFrom;
 
 	/**
 	 * @var \DateTime
 	 *
-	 * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u\Z'>")
+	 * @Serializer\Type("DateTime")
 	 */
 	public $createTimeTo;
 
 	/**
 	 * @var \DateTime
 	 *
-	 * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u\Z'>")
+	 * @Serializer\Type("DateTime")
 	 */
 	public $modTimeFrom;
 
 	/**
 	 * @var \DateTime
 	 *
-	 * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u\Z'>")
+	 * @Serializer\Type("DateTime")
 	 */
 	public $modTimeTo;
 
@@ -66,14 +66,14 @@ class GetOrdersRequest extends SecureRequest
 	/**
 	 * @var \DateTime
 	 *
-	 * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u\Z'>")
+	 * @Serializer\Type("DateTime")
 	 */
 	public $soldTimeFrom;
 
 	/**
 	 * @var \DateTime
 	 *
-	 * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u\Z'>")
+	 * @Serializer\Type("DateTime")
 	 */
 	public $soldTimeTo;
 

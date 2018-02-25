@@ -5,14 +5,14 @@ namespace Shoplo\BonanzaApi\Response;
 
 
 use JMS\Serializer\Annotation as Serializer;
-use Shoplo\BonanzaApi\Type\GetOrdersReponseType;
+use Shoplo\BonanzaApi\Type\GetOrdersResponseType;
 
 class GetOrdersResponse extends BaseResponse
 {
 	/**
-	 * @var GetOrdersReponseType
+	 * @var GetOrdersResponseType
 	 *
-	 * @Serializer\Type("Shoplo\BonanzaApi\Type\GetOrdersReponseType")
+	 * @Serializer\Type("Shoplo\BonanzaApi\Type\GetOrdersResponseType")
 	 */
 	public $getOrdersResponse;
 }
