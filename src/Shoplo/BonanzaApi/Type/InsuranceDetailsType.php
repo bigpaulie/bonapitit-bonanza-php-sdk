@@ -4,21 +4,24 @@
 namespace Shoplo\BonanzaApi\Type;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
+use Tebru\Gson\Annotation\SerializedName;
 
 class InsuranceDetailsType
 {
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+	 * @SerializedName("insuranceOption")
 	 */
 	public $insuranceOption;
 
 	/**
 	 * @var double
 	 *
-	 * @Serializer\Type("double")
+	 * @Gson\Type("double")
+     * @SerializedName("insuranceFee")
 	 */
 	public $insuranceFee;
 }

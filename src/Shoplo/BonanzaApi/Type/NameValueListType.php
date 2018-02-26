@@ -4,7 +4,7 @@
 namespace Shoplo\BonanzaApi\Type;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
 
 class NameValueListType
 {
@@ -12,14 +12,14 @@ class NameValueListType
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
 	 */
 	public $name;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
 	 */
 	public $value;
 }

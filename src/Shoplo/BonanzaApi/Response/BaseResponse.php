@@ -4,28 +4,29 @@
 namespace Shoplo\BonanzaApi\Response;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
+use Tebru\Gson\Annotation\Type;
 
 abstract class BaseResponse
 {
 	/**
 	 * @var \DateTime
 	 *
-	 * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u\Z'>")
+	 * @Type("string")
 	 */
 	public $timestamp;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
 	 */
 	public $version;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
 	 */
 	public $ack;
 }

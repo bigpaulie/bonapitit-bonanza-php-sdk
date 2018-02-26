@@ -4,49 +4,55 @@
 namespace Shoplo\BonanzaApi\Type;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
 
 class CalculatedShippingRateType
 {
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @Gson\SerializedName("packageSize")
 	 */
 	public $packageSize;
 
 	/**
 	 * @var int
 	 *
-	 * @Serializer\Type("int")
+	 * @Gson\Type("int")
+     * @Gson\SerializedName("shippingWeightLbs")
 	 */
 	public $shippingWeightLbs;
 
 	/**
 	 * @var int
 	 *
-	 * @Serializer\Type("int")
+	 * @Gson\Type("int")
+     * @Gson\SerializedName("shippingWeightOz")
 	 */
 	public $shippingWeightOz;
 
 	/**
 	 * @var int
 	 *
-	 * @Serializer\Type("int")
+	 * @Gson\Type("int")
+     * @Gson\SerializedName("shippingHeight")
 	 */
 	public $shippingHeight;
 
 	/**
 	 * @var int
 	 *
-	 * @Serializer\Type("int")
+	 * @Gson\Type("int")
+     * @Gson\SerializedName("shippingWidth")
 	 */
 	public $shippingWidth;
 
 	/**
 	 * @var int
 	 *
-	 * @Serializer\Type("int")
+	 * @Gson\Type("int")
+     * @Gson\SerializedName("shippingDepth")
 	 */
 	public $shippingDepth;
 

@@ -4,14 +4,16 @@
 namespace Shoplo\BonanzaApi\Type;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
+use Tebru\Gson\Annotation\SerializedName;
 
 class ShippingDetailsType
 {
     /**
      * @var InsuranceDetailsType
      *
-     * @Serializer\Type("Shoplo\BonanzaApi\Type\InsuranceDetailsType")
+     * @Gson\Type("Shoplo\BonanzaApi\Type\InsuranceDetailsType")
+     * @SerializedName("insuranceDetails")
      */
     public $insuranceDetails;
 
@@ -20,28 +22,32 @@ class ShippingDetailsType
      *
      * Allowed values in \Shoplo\BonanzaApi\Enums\ShippingServiceType
      *
-     * @Serializer\Type("string")
+     * @Gson\Type("string")
+     * @SerializedName("shippingService")
      */
     public $shippingService;
 
     /**
      * @var CalculatedShippingRateType
      *
-     * @Serializer\Type("Shoplo\BonanzaApi\Type\CalculatedShippingRateType")
+     * @Gson\Type("Shoplo\BonanzaApi\Type\CalculatedShippingRateType")
+     * @SerializedName("calculatedShippingRate")
      */
     public $calculatedShippingRate;
 
     /**
      * @var InternationalShippingServiceOptionType
      *
-     * @Serializer\Type("Shoplo\BonanzaApi\Type\InternationalShippingServiceOptionType")
+     * @Gson\Type("Shoplo\BonanzaApi\Type\InternationalShippingServiceOptionType")
+     * @SerializedName("internationalShippingServiceOption")
      */
     public $internationalShippingServiceOption;
 
     /**
      * @var ShippingServiceOptionsType
      *
-     * @Serializer\Type("Shoplo\BonanzaApi\Type\ShippingServiceOptionsType")
+     * @Gson\Type("Shoplo\BonanzaApi\Type\ShippingServiceOptionsType")
+     * @SerializedName("shippingServiceOptions")
      */
     public $shippingServiceOptions;
 }

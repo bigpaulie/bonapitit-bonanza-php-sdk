@@ -4,7 +4,7 @@
 namespace Shoplo\BonanzaApi\Request;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
 use Shoplo\BonanzaApi\Type\AddItemType;
 use Shoplo\BonanzaApi\Type\RequesterCredentialsType;
 
@@ -13,7 +13,7 @@ class AddFixedPriceItemRequest extends SecureRequest
 	/**
 	 * @var AddItemType
 	 *
-	 * @Serializer\Type("Shoplo\BonanzaApi\Type\AddItemType")
+	 * @Gson\Type("Shoplo\BonanzaApi\Type\AddItemType")
 	 */
 	public $item;
 }

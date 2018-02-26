@@ -4,7 +4,7 @@
 namespace Shoplo\BonanzaApi\Type;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
 
 class AddItemSpecificsType
 {
@@ -21,6 +21,7 @@ class AddItemSpecificsType
 	 * @var boolean
 	 *
 	 * @Serializer\Type("boolean")
+	 * @Serializer\SerializedName("discardOld")
 	 */
 	public $discardOld;
 }

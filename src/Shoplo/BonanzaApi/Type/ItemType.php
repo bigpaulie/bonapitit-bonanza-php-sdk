@@ -4,84 +4,94 @@
 namespace Shoplo\BonanzaApi\Type;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
+use Tebru\Gson\Annotation\SerializedName;
 
 class ItemType
 {
 	/**
 	 * @var boolean
 	 *
-	 * @Serializer\Type("boolean")
+	 * @Gson\Type("boolean")
+     * @SerializedName("bestOfferEnabled")
 	 */
 	public $bestOfferEnabled;
 
 	/**
 	 * @var double
 	 *
-	 * @Serializer\Type("double")
+	 * @Gson\Type("double")
+     * @SerializedName("buyItNowPrice")
 	 */
 	public $buyItNowPrice;
 
 	/**
 	 * @var double
 	 *
-	 * @Serializer\Type("double")
+	 * @Gson\Type("double")
+     * @SerializedName("convertedBuyItNowPrice")
 	 */
 	public $convertedBuyItNowPrice;
 
 	/**
 	 * @var double
 	 *
-	 * @Serializer\Type("double")
+	 * @Gson\Type("double")
+     * @SerializedName("convertedCurrentPrice")
 	 */
 	public $convertedCurrentPrice;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
 	 */
 	public $country;
 
 	/**
 	 * @var double
 	 *
-	 * @Serializer\Type("double")
+	 * @Gson\Type("double")
+     * @SerializedName("currentPrice")
 	 */
 	public $currentPrice;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
 	 */
 	public $description;
 
 	/**
 	 * @var int
 	 *
-	 * @Serializer\Type("int")
+	 * @Gson\Type("int")
+     * @SerializedName("ebayId")
 	 */
 	public $ebayId;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @SerializedName("galleryURL")
 	 */
 	public $galleryURL;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @SerializedName("itemID")
 	 */
 	public $itemID;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @SerializedName("parentItemID")
 	 */
 	public $parentItemID;
 
@@ -90,28 +100,31 @@ class ItemType
 	 *
 	 * SKU in other words, returned in getOrders call
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @SerializedName("sellerInventoryID")
 	 */
 	public $sellerInventoryID;
 
 	/**
 	 * @var ItemSpecificsType[]
 	 *
-	 * @Serializer\Type("array<Shoplo\BonanzaApi\Type\ItemSpecificsType>")
+	 * @Gson\Type("array<Shoplo\BonanzaApi\Type\ItemSpecificsType>")
+     * @SerializedName("itemSpecifics")
 	 */
 	public $itemSpecifics;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @SerializedName("listingStatus")
 	 */
 	public $listingStatus;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
 	 */
 	public $location;
 
@@ -120,28 +133,32 @@ class ItemType
 	 *
 	 * Allowed values in \Shoplo\BonanzaApi\Enums\PaymentMethodsType
 	 *
-	 * @Serializer\Type("array<string>")
+	 * @Gson\Type("array<string>")
+     * @SerializedName("paymentMethods")
 	 */
 	public $paymentMethods;
 
 	/**
 	 * @var string[]
 	 *
-	 * @Serializer\Type("array<string>")
+	 * @Gson\Type("array<string>")
+     * @SerializedName("pictureURL")
 	 */
 	public $pictureURL;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @SerializedName("postalCode")
 	 */
 	public $postalCode;
 
 	/**
 	 * @var PrimaryCategoryType
 	 *
-	 * @Serializer\Type("Shoplo\BonanzaApi\Type\PrimaryCategoryType")
+	 * @Gson\Type("Shoplo\BonanzaApi\Type\PrimaryCategoryType")
+     * @SerializedName("primaryCategory")
 	 */
 	public $primaryCategory;
 
@@ -150,77 +167,83 @@ class ItemType
 	 *
 	 * Provides the upc/mpn/isbn value in the form: ["upc/mpn/isbn", "value"]
 	 *
-	 * @Serializer\Type("array")
+	 * @Gson\Type("array")
+     * @SerializedName("productListingDetails")
 	 */
 	public $productListingDetails;
 
 	/**
 	 * @var int
 	 *
-	 * @Serializer\Type("int")
+	 * @Gson\Type("int")
 	 */
 	public $quantity;
 
 	/**
 	 * @var ReturnPolicyType
 	 *
-	 * @Serializer\Type("Shoplo\BonanzaApi\Type\ReturnPolicyType")
+	 * @Gson\Type("Shoplo\BonanzaApi\Type\ReturnPolicyType")
+     * @SerializedName("returnPolicy")
 	 */
 	public $returnPolicy;
 
 	/**
 	 * @var SellerType
 	 *
-	 * @Serializer\Type("Shoplo\BonanzaApi\Type\SellerType")
+	 * @Gson\Type("Shoplo\BonanzaApi\Type\SellerType")
 	 */
 	public $seller;
 
 	/**
 	 * @var ShippingCostSummaryType
 	 *
-	 * @Serializer\Type("Shoplo\BonanzaApi\Type\ShippingCostSummaryType")
+	 * @Gson\Type("Shoplo\BonanzaApi\Type\ShippingCostSummaryType")
+     * @SerializedName("shippingCostSummary")
 	 */
 	public $shippingCostSummary;
 
 	/**
 	 * @var ShipToLocationsType[]
 	 *
-	 * @Serializer\Type("array<Shoplo\BonanzaApi\Type\ShipToLocationsType>")
+	 * @Gson\Type("array<Shoplo\BonanzaApi\Type\ShipToLocationsType>")
+     * @SerializedName("shipToLocations")
 	 */
 	public $shipToLocations;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
 	 */
 	public $sku;
 
 	/**
 	 * @var \DateTime
 	 *
-	 * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u\Z'>")
+	 * @Gson\Type("DateTime")
+     * @SerializedName("startTime")
 	 */
 	public $startTime;
 
 	/**
 	 * @var StoreInfoType
 	 *
-	 * @Serializer\Type("Shoplo\BonanzaApi\Type\StoreInfoType")
+	 * @Gson\Type("Shoplo\BonanzaApi\Type\StoreInfoType")
+     * @SerializedName("storeInfo")
 	 */
 	public $storeInfo;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
 	 */
 	public $title;
 
 	/**
 	 * @var VariationsType
 	 *
-	 * @Serializer\Type("Shoplo\BonanzaApi\Type\VariationsType")
+	 * @Gson\Type("Shoplo\BonanzaApi\Type\VariationsType")
 	 */
 	public $variations;
 

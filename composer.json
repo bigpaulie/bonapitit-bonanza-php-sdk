@@ -4,7 +4,7 @@
     "type": "library",
     "require": {
         "guzzlehttp/guzzle": "~6.0",
-        "jms/serializer": "^1.8"
+        "tebru/gson-php": "^v0.5.2"
     },
     "authors": [
         {

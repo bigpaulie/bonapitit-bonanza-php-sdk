@@ -4,112 +4,120 @@
 namespace Shoplo\BonanzaApi\Type;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
 
 class AddItemType
 {
     /**
      * @var string
      *
-     * @Serializer\Type("string")
+     * @Gson\Type("string")
      */
     public $description;
 
     /**
      * @var string
      *
-     * @Serializer\Type("string")
+     * @Gson\Type("string")
+     * @Gson\SerializedName("externalProductId")
      */
     public $externalProductId;
 
     /**
      * @var boolean
      *
-     * @Serializer\Type("boolean")
+     * @Gson\Type("boolean")
      */
     public $obo;
 
     /**
      * @var AddItemSpecificsType
      *
-     * @Serializer\Type("Shoplo\BonanzaApi\Type\AddItemSpecificsType")
+     * @Gson\Type("Shoplo\BonanzaApi\Type\AddItemSpecificsType")
+     * @Gson\SerializedName("itemSpecifics")
      */
     public $itemSpecifics;
 
     /**
      * @var PictureDetailsType
      *
-     * @Serializer\Type("Shoplo\BonanzaApi\Type\PictureDetailsType")
+     * @Gson\Type("Shoplo\BonanzaApi\Type\PictureDetailsType")
+     * @Gson\SerializedName("pictureDetails")
      */
     public $pictureDetails;
 
     /**
      * @var double
      *
-     * @Serializer\Type("double")
+     * @Gson\Type("double")
      */
     public $price;
 
     /**
      * @var PrimaryCategoryType
      *
-     * @Serializer\Type("Shoplo\BonanzaApi\Type\PrimaryCategoryType")
+     * @Gson\Type("Shoplo\BonanzaApi\Type\PrimaryCategoryType")
+     * @Gson\SerializedName("primaryCategory")
      */
     public $primaryCategory;
 
     /**
      * @var ProductListingDetailsType
      *
-     * @Serializer\Type("Shoplo\BonanzaApi\Type\ProductListingDetailsType")
+     * @Gson\Type("Shoplo\BonanzaApi\Type\ProductListingDetailsType")
+     * @Gson\SerializedName("productListingDetails")
      */
     public $productListingDetails;
 
     /**
      * @var int
      *
-     * @Serializer\Type("int")
+     * @Gson\Type("int")
      */
     public $quantity;
 
     /**
      * @var ReturnPolicyType
      *
-     * @Serializer\Type("Shoplo\BonanzaApi\Type\ReturnPolicyType")
+     * @Gson\Type("Shoplo\BonanzaApi\Type\ReturnPolicyType")
+     * @Gson\SerializedName("returnPolicy")
      */
     public $returnPolicy;
 
     /**
      * @var ShippingDetailsType
      *
-     * @Serializer\Type("Shoplo\BonanzaApi\Type\ShippingDetailsType")
+     * @Gson\Type("Shoplo\BonanzaApi\Type\ShippingDetailsType")
+     * @Gson\SerializedName("shippingDetails")
      */
     public $shippingDetails;
 
     /**
      * @var string
      *
-     * @Serializer\Type("string")
+     * @Gson\Type("string")
      */
     public $sku;
 
     /**
      * @var string
      *
-     * @Serializer\Type("string")
+     * @Gson\Type("string")
      */
     public $title;
 
     /**
      * @var bool
      *
-     * @Serializer\Type("boolean")
+     * @Gson\Type("boolean")
+     * @Gson\SerializedName("allowForSale")
      */
     public $allowForSale;
 
     /**
      * @var VariationType[]
      *
-     * @Serializer\Type("array<Shoplo\BonanzaApi\Type\VariationType>")
+     * @Gson\Type("array<Shoplo\BonanzaApi\Type\VariationType>")
      */
     public $variations;
 }

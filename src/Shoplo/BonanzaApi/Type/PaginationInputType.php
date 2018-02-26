@@ -4,21 +4,21 @@
 namespace Shoplo\BonanzaApi\Type;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
 
 class PaginationInputType
 {
 	/**
 	 * @var int
 	 *
-	 * @Serializer\Type("int")
+	 * @Gson\Type("int")
 	 */
 	public $entriesPerPage;
 
 	/**
 	 * @var int
 	 *
-	 * @Serializer\Type("int")
+	 * @Gson\Type("int")
 	 */
 	public $pageNumber;
 }

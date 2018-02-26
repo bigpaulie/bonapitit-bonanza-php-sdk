@@ -4,14 +4,15 @@
 namespace Shoplo\BonanzaApi\Type;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
 
 class ShippingServiceOptionsType
 {
 	/**
 	 * @var boolean
 	 *
-	 * @Serializer\Type("boolean")
+	 * @Gson\Type("boolean")
+	 * @Gson\SerializedName("buyerPaysForLabel")
 	 */
 	public $buyerPaysForLabel;
 
@@ -20,21 +21,24 @@ class ShippingServiceOptionsType
 	 *
 	 * Allowed values in \Shoplo\BonanzaApi\Enums\ShippingType
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @Gson\SerializedName("shippingType")
 	 */
 	public $shippingType;
 
 	/**
 	 * @var boolean
 	 *
-	 * @Serializer\Type("boolean")
+	 * @Gson\Type("boolean")
+     * @Gson\SerializedName("freeShipping")
 	 */
 	public $freeShipping;
 
 	/**
 	 * @var double
 	 *
-	 * @Serializer\Type("double")
+	 * @Gson\Type("double")
+     * @Gson\SerializedName("shippingServiceCost")
 	 */
 	public $shippingServiceCost;
 
@@ -43,7 +47,8 @@ class ShippingServiceOptionsType
 	 *
 	 * Allowed values in \Shoplo\BonanzaApi\Enums\ShippingServiceType
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @Gson\SerializedName("shippingService")
 	 */
 	public $shippingService;
 
@@ -52,7 +57,8 @@ class ShippingServiceOptionsType
 	 *
 	 * Allowed values in \Shoplo\BonanzaApi\Enums\ShippingCarrierType
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @Gson\SerializedName("shippingCarrier")
 	 */
 	public $shippingCarrier;
 }

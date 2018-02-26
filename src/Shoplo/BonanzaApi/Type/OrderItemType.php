@@ -4,7 +4,8 @@
 namespace Shoplo\BonanzaApi\Type;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
+use Tebru\Gson\Annotation\SerializedName;
 
 class OrderItemType
 {
@@ -14,7 +15,8 @@ class OrderItemType
      * a historical snapshot.
      * @var int
      *
-     * @Serializer\Type("integer")
+     * @Gson\Type("integer")
+     * @SerializedName("itemID")
      */
     public $itemID;
 
@@ -23,7 +25,8 @@ class OrderItemType
      * item is created. parentItemID is the original (non-historical) item's ID.
      * @var int
      *
-     * @Serializer\Type("integer")
+     * @Gson\Type("integer")
+     * @SerializedName("parentItemID")
      */
     public $parentItemID;
 
@@ -31,7 +34,8 @@ class OrderItemType
      * The unique ebay ID for this item.
      * @var int
      *
-     * @Serializer\Type("integer")
+     * @Gson\Type("integer")
+     * @SerializedName("string")
      */
     public $ebayId;
 
@@ -39,7 +43,7 @@ class OrderItemType
      * The MPN for this item, if specified.
      * @var string
      *
-     * @Serializer\Type("string")
+     * @Gson\Type("string")
      */
     public $mpn;
 
@@ -47,15 +51,16 @@ class OrderItemType
      * Container for details about an individual item.
      * @var PersonalizedTextType
      *
-     * @Serializer\Type("Shoplo\BonanzaApi\Type\PersonalizedTextType")
+     * @Gson\Type("Shoplo\BonanzaApi\Type\PersonalizedTextType")
+     * @SerializedName("personalizedText")
      */
-    public $personalizedText;
+//    public $personalizedText;
 
     /**
      * The price per item for this item.
      * @var double
      *
-     * @Serializer\Type("double")
+     * @Gson\Type("string")
      */
     public $price;
 
@@ -63,7 +68,8 @@ class OrderItemType
      * The seller-provided SKU for this item.
      * @var string
      *
-     * @Serializer\Type("string")
+     * @Gson\Type("string")
+     * @SerializedName("sellerInventoryID")
      */
     public $sellerInventoryID;
 
@@ -71,7 +77,8 @@ class OrderItemType
      * URL of the item's image's thumbnail.
      * @var string
      *
-     * @Serializer\Type("string")
+     * @Gson\Type("string")
+     * @SerializedName("thumbnailURL")
      */
     public $thumbnailURL;
 
@@ -79,7 +86,7 @@ class OrderItemType
      * The quantity of this item included in this order.
      * @var int
      *
-     * @Serializer\Type("integer")
+     * @Gson\Type("integer")
      */
     public $quantity;
 
@@ -87,14 +94,14 @@ class OrderItemType
      * The title of this item.
      * @var string
      *
-     * @Serializer\Type("string")
+     * @Gson\Type("string")
      */
     public $title;
 
 	/**
 	 * @var OrderVariationsType
 	 *
-	 * @Serializer\Type("Shoplo\BonanzaApi\Type\OrderVariationsType")
+	 * @Gson\Type("Shoplo\BonanzaApi\Type\OrderVariationsType")
 	 */
 	public $variations;
 

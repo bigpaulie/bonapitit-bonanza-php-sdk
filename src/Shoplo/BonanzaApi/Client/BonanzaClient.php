@@ -3,7 +3,6 @@
 
 namespace Shoplo\BonanzaApi\Client;
 
-
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
 use JMS\Serializer\JsonSerializationVisitor;
@@ -50,6 +49,7 @@ use Shoplo\BonanzaApi\Response\GetUserResponse;
 use Shoplo\BonanzaApi\Response\ReviseFixedPriceItemResponse;
 use Shoplo\BonanzaApi\Response\SetNotificationPreferencesResponse;
 use Shoplo\BonanzaApi\Response\UpdateBoothResponse;
+use Tebru\Gson\Gson;
 
 class BonanzaClient
 {
@@ -77,32 +77,19 @@ class BonanzaClient
 	private $client;
 
 	/**
-	 * @var SerializerInterface
+	 * @var Gson
 	 */
 	private $serializer;
 
-	/**
-	 * @param SerializerInterface $serializer
-	 * @param $devId
-	 * @param $certID
-	 *
-	 */
+    /**
+     * @param CredentialsInterface $credentials
+     * @throws \Doctrine\Common\Annotations\AnnotationException
+     */
 	public function __construct(CredentialsInterface $credentials)
 	{
 		$this->credentials = $credentials;
 
-        $propertyNamingStrategy = new SerializedNameAnnotationStrategy(
-            new IdenticalPropertyNamingStrategy()
-        );
-
-        $visitor = new JsonSerializationVisitor($propertyNamingStrategy);
-        $visitor->setOptions(JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_HEX_AMP|JSON_UNESCAPED_UNICODE);
-
-		$this->serializer  = SerializerBuilder::create()
-		                                      ->setPropertyNamingStrategy($propertyNamingStrategy)
-                                              ->setSerializationVisitor('json', $visitor)
-                                              ->addDefaultDeserializationVisitors()
-		                                      ->build();
+        $this->serializer = Gson::builder()->build();
 
 		$stack = HandlerStack::create();
 
@@ -133,19 +120,24 @@ class BonanzaClient
 		return $this->credentials;
 	}
 
-	public function fetchToken(FetchTokenRequest $request): FetchTokenResponse
+    /**
+     * @param FetchTokenRequest $request
+     * @return FetchTokenResponse
+     * @throws SecureRequestException
+     */
+    public function fetchToken(FetchTokenRequest $request): FetchTokenResponse
 	{
 		return $this->post(__FUNCTION__, $request, true);
 	}
 
-	/**
-	 * @param string $function
-	 * @param mixed $data
-	 * @param array $headers
-	 * @param bool $isMultipart
-	 *
-	 * @return mixed
-	 */
+    /**
+     * @param string $function
+     * @param mixed $data
+     * @param bool $isSecure
+     * @param array $headers
+     * @return mixed
+     * @throws SecureRequestException
+     */
 	private function post($function, $data, $isSecure = false, array $headers = []): BaseResponse
 	{
 		if ($isSecure)
@@ -161,10 +153,7 @@ class BonanzaClient
 			$url = 'http://' . $this->apiUrl . 'standard_request';
 		}
 
-		$context = new SerializationContext();
-		$context->setSerializeNull(false);
-
-		$data = $this->serializer->serialize($data, 'json', $context);
+		$data = $this->serializer->toJson($data);
 
 		$rsp = $this->client->request(
 			'POST',
@@ -176,8 +165,8 @@ class BonanzaClient
 		);
 
 		$class = sprintf('Shoplo\\BonanzaApi\\Response\\%s', ucfirst($function) . 'Response');
-
-		return $this->serializer->deserialize((string)$rsp->getBody(), $class, 'json');
+		echo (string)$rsp->getBody() . "\n";
+		return $this->serializer->fromJson((string)$rsp->getBody(), $class);
 	}
 
 	public function getBooth(GetBoothRequest $request): GetBoothResponse

@@ -4,14 +4,16 @@
 namespace Shoplo\BonanzaApi\Type;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
+use Tebru\Gson\Annotation\SerializedName;
 
 class OrderArrayType
 {
 	/**
 	 * @var OrderType
 	 *
-	 * @Serializer\Type("Shoplo\BonanzaApi\Type\OrderType")
+	 * @Gson\Type("Shoplo\BonanzaApi\Type\OrderType")
+     * @SerializedName("order")
 	 */
 	public $order;
 }

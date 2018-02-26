@@ -4,7 +4,7 @@
 namespace Shoplo\BonanzaApi\Request;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
 use Shoplo\BonanzaApi\Type\PaginationInputType;
 use Shoplo\BonanzaApi\Type\RequesterCredentialsType;
 
@@ -13,35 +13,35 @@ class GetOrdersRequest extends SecureRequest
 	/**
 	 * @var \DateTime
 	 *
-	 * @Serializer\Type("DateTime")
+	 * @Gson\Type("DateTime")
 	 */
 	public $createTimeFrom;
 
 	/**
 	 * @var \DateTime
 	 *
-	 * @Serializer\Type("DateTime")
+	 * @Gson\Type("DateTime")
 	 */
 	public $createTimeTo;
 
 	/**
 	 * @var \DateTime
 	 *
-	 * @Serializer\Type("DateTime")
+	 * @Gson\Type("DateTime")
 	 */
 	public $modTimeFrom;
 
 	/**
 	 * @var \DateTime
 	 *
-	 * @Serializer\Type("DateTime")
+	 * @Gson\Type("DateTime")
 	 */
 	public $modTimeTo;
 
 	/**
 	 * @var int[]
 	 *
-	 * @Serializer\Type("array<int>")
+	 * @Gson\Type("array<int>")
 	 */
 	public $orderIDArray;
 
@@ -50,7 +50,7 @@ class GetOrdersRequest extends SecureRequest
 	 *
 	 * Allowed values in \Shoplo\BonanzaApi\Enums\UserRole
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
 	 */
 	public $orderRole;
 
@@ -59,28 +59,28 @@ class GetOrdersRequest extends SecureRequest
 	 *
 	 * Allowed values in \Shoplo\BonanzaApi\Enums\OrderStatusType
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
 	 */
 	public $orderStatus;
 
 	/**
 	 * @var \DateTime
 	 *
-	 * @Serializer\Type("DateTime")
+	 * @Gson\Type("DateTime")
 	 */
 	public $soldTimeFrom;
 
 	/**
 	 * @var \DateTime
 	 *
-	 * @Serializer\Type("DateTime")
+	 * @Gson\Type("DateTime")
 	 */
 	public $soldTimeTo;
 
 	/**
 	 * @var PaginationInputType
 	 *
-	 * @Serializer\Type("Shoplo\BonanzaApi\Type\PaginationInputType")
+	 * @Gson\Type("Shoplo\BonanzaApi\Type\PaginationInputType")
 	 */
 	public $paginationInput;
 }

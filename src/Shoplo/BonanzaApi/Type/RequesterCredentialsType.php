@@ -3,15 +3,16 @@
 
 namespace Shoplo\BonanzaApi\Type;
 
-
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
+use Tebru\Gson\Annotation\SerializedName;
 
 class RequesterCredentialsType
 {
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @SerializedName("bonanzleAuthToken")
 	 */
 	public $bonanzleAuthToken;
 }

@@ -4,7 +4,8 @@
 namespace Shoplo\BonanzaApi\Response;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
+use Tebru\Gson\Annotation\SerializedName;
 use Shoplo\BonanzaApi\Type\GetOrdersResponseType;
 
 class GetOrdersResponse extends BaseResponse
@@ -12,7 +13,8 @@ class GetOrdersResponse extends BaseResponse
 	/**
 	 * @var GetOrdersResponseType
 	 *
-	 * @Serializer\Type("Shoplo\BonanzaApi\Type\GetOrdersResponseType")
+	 * @Gson\Type("Shoplo\BonanzaApi\Type\GetOrdersResponseType")
+     * @SerializedName("getOrdersResponse")
 	 */
 	public $getOrdersResponse;
 }

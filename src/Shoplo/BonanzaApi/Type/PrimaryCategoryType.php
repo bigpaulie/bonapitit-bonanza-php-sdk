@@ -4,21 +4,23 @@
 namespace Shoplo\BonanzaApi\Type;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
 
 class PrimaryCategoryType
 {
 	/**
 	 * @var int
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+	 * @Gson\SerializedName("categoryId")
 	 */
 	public $categoryId;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @Gson\SerializedName("categoryName")
 	 */
 	public $categoryName;
 }

@@ -4,7 +4,7 @@
 namespace Shoplo\BonanzaApi\Type;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
 
 class PersonalizedTextType
 {
@@ -12,7 +12,7 @@ class PersonalizedTextType
      * The label of this item personalization field.
      * @var string
      *
-     * @Serializer\Type("string")
+     * @Gson\Type("string")
      */
     public $label;
 
@@ -20,7 +20,7 @@ class PersonalizedTextType
      * The buyer-provided text for this personalization field.
      * @var string
      *
-     * @Serializer\Type("string")
+     * @Gson\Type("string")
      */
     public $body;
 }

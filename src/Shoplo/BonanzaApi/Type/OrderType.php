@@ -4,7 +4,8 @@
 namespace Shoplo\BonanzaApi\Type;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
+use Tebru\Gson\Annotation\SerializedName;
 
 class OrderType
 {
@@ -12,49 +13,56 @@ class OrderType
 	/**
 	 * @var double
 	 *
-	 * @Serializer\Type("double")
+	 * @Gson\Type("string")
+     * @SerializedName("amountPaid")
 	 */
 	public $amountPaid;
 
 	/**
 	 * @var double
 	 *
-	 * @Serializer\Type("double")
+	 * @Gson\Type("double")
+     * @SerializedName("amountSaved")
 	 */
 	public $amountSaved;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @SerializedName("buyerCheckoutMessage")
 	 */
 	public $buyerCheckoutMessage;
 
 	/**
 	 * @var int
 	 *
-	 * @Serializer\Type("int")
+	 * @Gson\Type("int")
+     * @SerializedName("buyerUserID")
 	 */
 	public $buyerUserID;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @SerializedName("buyerUserName")
 	 */
 	public $buyerUserName;
 
 	/**
 	 * @var CheckoutStatusType
 	 *
-	 * @Serializer\Type("Shoplo\BonanzaApi\Type\CheckoutStatusType")
+	 * @Gson\Type("Shoplo\BonanzaApi\Type\CheckoutStatusType")
+     * @SerializedName("checkoutStatus")
 	 */
 	public $checkoutStatus;
 
 	/**
 	 * @var \DateTime
 	 *
-	 * @Serializer\Type("DateTime")
+	 * @Gson\Type("DateTime")
+     * @SerializedName("createdTime")
 	 */
 	public $createdTime;
 
@@ -63,84 +71,94 @@ class OrderType
 	 *
 	 * Allowed values in \Shoplo\BonanzaApi\Enums\UserRole
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @SerializedName("creatingUserRole")
 	 */
 	public $creatingUserRole;
 
 	/**
 	 * @var OrderItemArrayType[]
 	 *
-	 * @Serializer\Type("array<Shoplo\BonanzaApi\Type\OrderItemArrayType>")
+	 * @Gson\Type("array<Shoplo\BonanzaApi\Type\OrderItemArrayType>")
+     * @SerializedName("itemArray")
 	 */
 	public $itemArray;
 
 	/**
 	 * @var int
 	 *
-	 * @Serializer\Type("int")
+	 * @Gson\Type("int")
+     * @SerializedName("orderID")
 	 */
 	public $orderID;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @SerializedName("orderStatus")
 	 */
 	public $orderStatus;
 
 	/**
 	 * @var \DateTime
 	 *
-	 * @Serializer\Type("DateTime")
+	 * @Gson\Type("DateTime")
+     * @SerializedName("paidTime")
 	 */
 	public $paidTime;
 
 	/**
 	 * @var AddressType
 	 *
-	 * @Serializer\Type("Shoplo\BonanzaApi\Type\AddressType")
+	 * @Gson\Type("Shoplo\BonanzaApi\Type\AddressType")
+     * @SerializedName("shippingAddress")
 	 */
 	public $shippingAddress;
 
 	/**
 	 * @var ShippingDetailsType
 	 *
-	 * @Serializer\Type("Shoplo\BonanzaApi\Type\ShippingDetailsType")
+	 * @Gson\Type("Shoplo\BonanzaApi\Type\ShippingDetailsType")
+     * @serializedName("shippingDetails")
 	 */
 	public $shippingDetails;
 
 	/**
 	 * @var \DateTime
 	 *
-	 * @Serializer\Type("DateTime")
+	 * @Gson\Type("DateTime")
+     * @serializedName("shippedTime")
 	 */
 	public $shippedTime;
 
 	/**
 	 * @var double
 	 *
-	 * @Serializer\Type("double")
+	 * @Gson\Type("double")
 	 */
 	public $subtotal;
 
 	/**
 	 * @var double
 	 *
-	 * @Serializer\Type("double")
+	 * @Gson\Type("double")
+     * @serializedName("taxAmount")
 	 */
 	public $taxAmount;
 
 	/**
 	 * @var double
 	 *
-	 * @Serializer\Type("double")
+	 * @Gson\Type("string")
 	 */
 	public $total;
 
 	/**
 	 * @var TransactionArrayType
 	 *
-	 * @Serializer\Type("Shoplo\BonanzaApi\Type\TransactionArrayType")
+	 * @Gson\Type("Shoplo\BonanzaApi\Type\TransactionArrayType")
+     * @serializedName("transactionArray")
 	 */
 	public $transactionArray;
 }

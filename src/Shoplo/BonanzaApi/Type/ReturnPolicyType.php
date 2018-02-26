@@ -4,56 +4,63 @@
 namespace Shoplo\BonanzaApi\Type;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
+use Tebru\Gson\Annotation\SerializedName;
 
 class ReturnPolicyType
 {
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
 	 */
 	public $description;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @SerializedName("returnsAcceptedOption")
 	 */
 	public $returnsAcceptedOption;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @SerializedName("returnsAccepted")
 	 */
 	public $returnsAccepted;
 
 	/**
 	 * @var int
 	 *
-	 * @Serializer\Type("int")
+	 * @Gson\Type("int")
+     * @SerializedName("returnsWithinOption")
 	 */
 	public $returnsWithinOption;
 
 	/**
 	 * @var int
 	 *
-	 * @Serializer\Type("int")
+	 * @Gson\Type("int")
+     * @SerializedName("returnsWithin")
 	 */
 	public $returnsWithin;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @SerializedName("shippingCostPaidByOption")
 	 */
 	public $shippingCostPaidByOption;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @SerializedName("shippingCostPaidBy")
 	 */
 	public $shippingCostPaidBy;
 }

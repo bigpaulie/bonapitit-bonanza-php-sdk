@@ -4,21 +4,23 @@
 namespace Shoplo\BonanzaApi\Type;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
 
 class PictureDetailsType
 {
 	/**
 	 * @var boolean
 	 *
-	 * @Serializer\Type("boolean")
+	 * @Gson\Type("boolean")
+	 * @Gson\SerializedName("discardOld")
 	 */
 	public $discardOld;
 
 	/**
 	 * @var string[]
 	 *
-	 * @Serializer\Type("array<string>")
+	 * @Gson\Type("array<string>")
+     * @Gson\SerializedName("pictureURL")
 	 */
 	public $pictureURL;
 }

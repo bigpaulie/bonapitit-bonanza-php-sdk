@@ -4,7 +4,7 @@
 namespace Shoplo\BonanzaApi\Response;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
 use Shoplo\BonanzaApi\Type\FixedPriceItemResponseType;
 
 class AddFixedPriceItemResponse extends BaseResponse
@@ -12,7 +12,8 @@ class AddFixedPriceItemResponse extends BaseResponse
 	/**
 	 * @var FixedPriceItemResponseType
 	 *
-	 * @Serializer\Type("Shoplo\BonanzaApi\Type\FixedPriceItemResponseType")
+	 * @Gson\Type("Shoplo\BonanzaApi\Type\FixedPriceItemResponseType")
+	 * @Gson\SerializedName("addFixedPriceItemResponse")
 	 */
 	public $addFixedPriceItemResponse;
 }

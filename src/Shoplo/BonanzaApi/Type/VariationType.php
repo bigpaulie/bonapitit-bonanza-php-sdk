@@ -4,35 +4,37 @@
 namespace Shoplo\BonanzaApi\Type;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
+use Tebru\Gson\Annotation\SerializedName;
 
 class VariationType
 {
 	/**
 	 * @var double
 	 *
-	 * @Serializer\Type("double")
+	 * @Gson\Type("double")
 	 */
 	public $price;
 
 	/**
 	 * @var int
 	 *
-	 * @Serializer\Type("int")
+	 * @Gson\Type("int")
 	 */
 	public $quantity;
 
 	/**
 	 * @var NameValueListType[]
 	 *
-	 * @Serializer\Type("array<Shoplo\BonanzaApi\Type\NameValueListType>")
+	 * @Gson\Type("array<Shoplo\BonanzaApi\Type\NameValueListType>")
+     * @SerializedName("nameValueList")
 	 */
 	public $nameValueList;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
 	 */
 	public $upc;
 }

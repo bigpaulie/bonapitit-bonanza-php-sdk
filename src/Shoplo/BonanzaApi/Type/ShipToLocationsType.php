@@ -4,7 +4,8 @@
 namespace Shoplo\BonanzaApi\Type;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
+use Tebru\Gson\Annotation\SerializedName;
 
 class ShipToLocationsType
 {
@@ -13,14 +14,15 @@ class ShipToLocationsType
 	 *
 	 * Allowed values in \Shoplo\BonanzaApi\Enums\RegionType
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
 	 */
 	public $region;
 
 	/**
 	 * @var double
 	 *
-	 * @Serializer\Type("double")
+	 * @Gson\Type("double")
+     * @SerializedName("shippingServiceCost")
 	 */
 	public $shippingServiceCost;
 
@@ -29,7 +31,8 @@ class ShipToLocationsType
 	 *
 	 * Allowed values in \Shoplo\BonanzaApi\Enums\ShippingType
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @SerializedName("shippingType")
 	 */
 	public $shippingType;
 }

@@ -4,35 +4,38 @@
 namespace Shoplo\BonanzaApi\Type;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
 
 class FixedPriceItemResponseType extends BaseResponseType
 {
     /**
      * @var string
      *
-     * @Serializer\Type("string")
+     * @Gson\Type("string")
+     * @Gson\SerializedName("sellingState")
      */
     public $sellingState;
 
     /**
      * @var int
      *
-     * @Serializer\Type("int")
+     * @Gson\Type("int")
+     * @Gson\SerializedName("categoryId")
      */
     public $categoryId;
 
     /**
      * @var int
      *
-     * @Serializer\Type("int")
+     * @Gson\Type("int")
+     * @Gson\SerializedName("itemId")
      */
     public $itemId;
 
     /**
      * @var string
      *
-     * @Serializer\Type("string")
+     * @Gson\Type("string")
      */
     public $message;
 }

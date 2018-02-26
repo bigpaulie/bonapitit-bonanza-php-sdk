@@ -4,14 +4,14 @@
 namespace Shoplo\BonanzaApi\Type;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
 
 class TransactionArrayType
 {
 	/**
 	 * @var TransactionType
 	 *
-	 * @Serializer\Type("Shoplo\BonanzaApi\Type\TransactionType")
+	 * @Gson\Type("Shoplo\BonanzaApi\Type\TransactionType")
 	 */
 	public $transaction;
 }

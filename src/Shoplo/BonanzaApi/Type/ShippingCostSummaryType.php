@@ -4,42 +4,47 @@
 namespace Shoplo\BonanzaApi\Type;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
+use Tebru\Gson\Annotation\SerializedName;
 
 class ShippingCostSummaryType
 {
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
 	 */
 	public $carrier;
 
 	/**
 	 * @var double
 	 *
-	 * @Serializer\Type("double")
+	 * @Gson\Type("double")
+     * @SerializedName("insuranceCost")
 	 */
 	public $insuranceCost;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @SerializedName("insuranceType")
 	 */
 	public $insuranceType;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @SerializedName("packageSize")
 	 */
 	public $packageSize;
 
 	/**
 	 * @var double
 	 *
-	 * @Serializer\Type("double")
+	 * @Gson\Type("double")
+     * @SerializedName("shippingServiceCost")
 	 */
 	public $shippingServiceCost;
 
@@ -48,28 +53,32 @@ class ShippingCostSummaryType
 	 *
 	 * Allowed values in \Shoplo\BonanzaApi\Enums\ShippingType
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @SerializedName("shippingType")
 	 */
 	public $shippingType;
 
 	/**
 	 * @var int
 	 *
-	 * @Serializer\Type("int")
+	 * @Gson\Type("int")
+     * @SerializedName("shippingLbs")
 	 */
 	public $shippingLbs;
 
 	/**
 	 * @var int
 	 *
-	 * @Serializer\Type("int")
+	 * @Gson\Type("int")
+     * @SerializedName("shippingOz")
 	 */
 	public $shippingOz;
 
 	/**
 	 * @var ShippingServicesType[]
 	 *
-	 * @Serializer\Type("array<Shoplo\BonanzaApi\Type\ShippingServicesType>")
+	 * @Gson\Type("array<Shoplo\BonanzaApi\Type\ShippingServicesType>")
+     * @SerializedName("shippingServices")
 	 */
 	public $shippingServices;
 }

@@ -4,7 +4,8 @@
 namespace Shoplo\BonanzaApi\Request;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
+use Tebru\Gson\Annotation\SerializedName;
 use Shoplo\BonanzaApi\Type\RequesterCredentialsType;
 
 abstract class SecureRequest
@@ -12,7 +13,8 @@ abstract class SecureRequest
 	/**
 	 * @var RequesterCredentialsType
 	 *
-	 * @Serializer\Type("Shoplo\BonanzaApi\Type\RequesterCredentialsType")
+	 * @Gson\Type("Shoplo\BonanzaApi\Type\RequesterCredentialsType")
+     * @SerializedName("requesterCredentials")
 	 */
 	public $requesterCredentials;
 }

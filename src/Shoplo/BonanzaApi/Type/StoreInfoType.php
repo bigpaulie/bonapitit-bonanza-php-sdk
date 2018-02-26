@@ -4,7 +4,8 @@
 namespace Shoplo\BonanzaApi\Type;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
+use Tebru\Gson\Annotation\SerializedName;
 
 class StoreInfoType
 {
@@ -12,28 +13,32 @@ class StoreInfoType
 	/**
 	 * @var StoreDiscountType
 	 *
-	 * @Serializer\Type("Shoplo\BonanzaApi\Type\StoreDiscountType")
+	 * @Gson\Type("Shoplo\BonanzaApi\Type\StoreDiscountType")
+     * @SerializedName("storeDiscount")
 	 */
 	public $storeDiscount;
 
 	/**
 	 * @var int
 	 *
-	 * @Serializer\Type("int")
+	 * @Gson\Type("int")
+     * @SerializedName("storeItemCount")
 	 */
 	public $storeItemCount;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @SerializedName("storeName")
 	 */
 	public $storeName;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @SerializedName("storeURL")
 	 */
 	public $storeURL;
 }

@@ -4,35 +4,38 @@
 namespace Shoplo\BonanzaApi\Type;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
 
 class TransactionType
 {
 	/**
 	 * @var BuyerType
 	 *
-	 * @Serializer\Type("Shoplo\BonanzaApi\Type\BuyerType")
+	 * @Gson\Type("Shoplo\BonanzaApi\Type\BuyerType")
 	 */
 	public $buyer;
 
 	/**
 	 * @var double
 	 *
-	 * @Serializer\Type("double")
+	 * @Gson\Type("string")
+	 * @Gson\SerializedName("finalValueFee")
 	 */
 	public $finalValueFee;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @Gson\SerializedName("providerName")
 	 */
 	public $providerName;
 
 	/**
 	 * @var string
 	 *
-	 * @Serializer\Type("string")
+	 * @Gson\Type("string")
+     * @Gson\SerializedName("providerID")
 	 */
 	public $providerID;
 }

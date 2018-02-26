@@ -4,7 +4,8 @@
 namespace Shoplo\BonanzaApi\Type;
 
 
-use JMS\Serializer\Annotation as Serializer;
+use Tebru\Gson\Annotation as Gson;
+use Tebru\Gson\Annotation\SerializedName;
 
 class GetOrdersResponseType extends BaseResponseType
 {
@@ -12,21 +13,24 @@ class GetOrdersResponseType extends BaseResponseType
 	/**
 	 * @var boolean
 	 *
-	 * @Serializer\Type("boolean")
+	 * @Gson\Type("string")
+     * @SerializedName("hasMoreOrders")
 	 */
 	public $hasMoreOrders;
 
 	/**
 	 * @var PaginationResultType
 	 *
-	 * @Serializer\Type("Shoplo\BonanzaApi\Type\PaginationResultType")
+	 * @Gson\Type("Shoplo\BonanzaApi\Type\PaginationResultType")
+     * @SerializedName("paginationResult")
 	 */
 	public $paginationResult;
 
 	/**
 	 * @var OrderArrayType[]
 	 *
-	 * @Serializer\Type("array<Shoplo\BonanzaApi\Type\OrderArrayType>")
+	 * @Gson\Type("array<Shoplo\BonanzaApi\Type\OrderArrayType>")
+     * @SerializedName("orderArray")
 	 */
 	public $orderArray;
 }
