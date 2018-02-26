@@ -13,15 +13,15 @@ class AddItemSpecificsType
 	 *
 	 * @var array
 	 *
-	 * @Serializer\Type("array")
+	 * @Gson\Type("array")
 	 */
 	public $specifics;
 
 	/**
 	 * @var boolean
 	 *
-	 * @Serializer\Type("boolean")
-	 * @Serializer\SerializedName("discardOld")
+	 * @Gson\Type("boolean")
+	 * @Gson\SerializedName("discardOld")
 	 */
 	public $discardOld;
 }
