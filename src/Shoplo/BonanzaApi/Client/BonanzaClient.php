@@ -109,6 +109,7 @@ class BonanzaClient
 		$stack->push(function (callable $handler) {
 			return function (RequestInterface $request, array $options) use ($handler) {
 				$request = $request->withHeader(self::HEADER_DEV_ID, $this->credentials->getDevId());
+                $request = $request->withHeader('Content-Type', 'application/x-www-form-urlencoded');
 
 				if ($this->credentials->getCertId())
 				{
@@ -138,14 +139,14 @@ class BonanzaClient
 		return $this->post(__FUNCTION__, $request, true);
 	}
 
-	/**
-	 * @param string $function
-	 * @param mixed $data
-	 * @param array $headers
-	 * @param bool $isMultipart
-	 *
-	 * @return mixed
-	 */
+    /**
+     * @param string $function
+     * @param mixed $data
+     * @param bool $isSecure
+     * @param array $headers
+     * @return mixed
+     * @throws SecureRequestException
+     */
 	private function post($function, $data, $isSecure = false, array $headers = []): BaseResponse
 	{
 		if ($isSecure)
@@ -164,7 +165,11 @@ class BonanzaClient
 		$context = new SerializationContext();
 		$context->setSerializeNull(false);
 
-		$data = $this->serializer->serialize($data, 'json', $context);
+        /**
+         * @TODO: revert back to the original serializing method once we remove all the warnings
+         */
+		//$data = $this->serializer->serialize($data, 'json', $context);
+		$data = urlencode(json_encode($data));
 
 		$rsp = $this->client->request(
 			'POST',
