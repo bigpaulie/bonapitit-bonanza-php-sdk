@@ -169,6 +169,8 @@ class BonanzaClient
          * @TODO: revert back to the original serializing method once we remove all the warnings
          */
 		//$data = $this->serializer->serialize($data, 'json', $context);
+        // workaround for removing nulls
+        $data = $this->walk_recursive_remove(json_decode(json_encode($data), true));
 		$data = urlencode(json_encode($data));
 
 		$rsp = $this->client->request(
@@ -263,5 +265,24 @@ class BonanzaClient
     public function completeSale(CompleteSaleRequest $request): CompleteSaleResponse
     {
         return $this->post(__FUNCTION__, $request, true);
+    }
+
+    /**
+     * @param array $array
+     * @return array
+     */
+    private function walk_recursive_remove (array $array)
+    {
+        foreach ($array as $k => $v) {
+            if (is_array($v)) {
+                $array[$k] = $this->walk_recursive_remove($v);
+            } else {
+                if (null === $v) {
+                    unset($array[$k]);
+                }
+            }
+        }
+
+        return $array;
     }
 }
