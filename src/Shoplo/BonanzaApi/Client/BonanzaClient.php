@@ -105,7 +105,6 @@ class BonanzaClient
 		                                      ->setPropertyNamingStrategy($propertyNamingStrategy)
                                               ->setSerializationVisitor('json', $visitor)
                                               ->setDeserializationVisitor('json', $deserializeVisitor)
-                                              ->addDefaultDeserializationVisitors()
 		                                      ->build();
 
 		$stack = HandlerStack::create();
