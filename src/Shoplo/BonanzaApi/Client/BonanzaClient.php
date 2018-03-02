@@ -50,6 +50,7 @@ use Shoplo\BonanzaApi\Response\GetUserResponse;
 use Shoplo\BonanzaApi\Response\ReviseFixedPriceItemResponse;
 use Shoplo\BonanzaApi\Response\SetNotificationPreferencesResponse;
 use Shoplo\BonanzaApi\Response\UpdateBoothResponse;
+use Shoplo\BonanzaApi\Visitors\JsonDeserializationVisitor;
 
 class BonanzaClient
 {
@@ -98,9 +99,12 @@ class BonanzaClient
         $visitor = new JsonSerializationVisitor($propertyNamingStrategy);
         $visitor->setOptions(JSON_HEX_TAG|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_HEX_AMP|JSON_UNESCAPED_UNICODE);
 
+        $deserializeVisitor = new JsonDeserializationVisitor($propertyNamingStrategy);
+
 		$this->serializer  = SerializerBuilder::create()
 		                                      ->setPropertyNamingStrategy($propertyNamingStrategy)
                                               ->setSerializationVisitor('json', $visitor)
+                                              ->setDeserializationVisitor('json', $deserializeVisitor)
                                               ->addDefaultDeserializationVisitors()
 		                                      ->build();
 
