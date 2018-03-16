@@ -35,4 +35,18 @@ class FixedPriceItemResponseType extends BaseResponseType
      * @Serializer\Type("string")
      */
     public $message;
+
+    /**
+     * @var string
+     *
+     * @Serializer\Type("string")
+     */
+    public $resultMessage;
+
+    /**
+     * @var bool
+     *
+     * @Serializer\Type("boolean")
+     */
+    public $success;
 }
