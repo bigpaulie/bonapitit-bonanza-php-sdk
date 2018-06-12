@@ -19,6 +19,7 @@ use Shoplo\BonanzaApi\Request\AddFixedPriceItemRequest;
 use Shoplo\BonanzaApi\Request\CompleteSaleRequest;
 use Shoplo\BonanzaApi\Request\EndFixedPriceItemRequest;
 use Shoplo\BonanzaApi\Request\FetchTokenRequest;
+use Shoplo\BonanzaApi\Request\FindItemsByKeywordsRequest;
 use Shoplo\BonanzaApi\Request\GetBoothItemsRequest;
 use Shoplo\BonanzaApi\Request\GetBoothRequest;
 use Shoplo\BonanzaApi\Request\GetCategoriesRequest;
@@ -37,6 +38,7 @@ use Shoplo\BonanzaApi\Response\BaseResponse;
 use Shoplo\BonanzaApi\Response\CompleteSaleResponse;
 use Shoplo\BonanzaApi\Response\EndFixedPriceItemResponse;
 use Shoplo\BonanzaApi\Response\FetchTokenResponse;
+use Shoplo\BonanzaApi\Response\FindItemsByKeywordsResponse;
 use Shoplo\BonanzaApi\Response\GetBoothItemsResponse;
 use Shoplo\BonanzaApi\Response\GetBoothResponse;
 use Shoplo\BonanzaApi\Response\GetCategoriesResponse;
@@ -266,6 +268,11 @@ class BonanzaClient
 	}
 
     public function completeSale(CompleteSaleRequest $request): CompleteSaleResponse
+    {
+        return $this->post(__FUNCTION__, $request, true);
+    }
+
+    public function findItemsByKeywords(FindItemsByKeywordsRequest $request):FindItemsByKeywordsResponse
     {
         return $this->post(__FUNCTION__, $request, true);
     }
