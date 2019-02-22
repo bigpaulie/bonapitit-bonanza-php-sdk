@@ -53,10 +53,10 @@ class ListingInfoType
      */
     public $startTime;
 
-    /**
-     * @var string
-     *
-     * @Serializer\Type("string")
-     */
-    public $lastChangeTime;
+//    /**
+//     * @var string
+//     *
+//     * @Serializer\Type("string")
+//     */
+//    public $lastChangeTime;
 }
