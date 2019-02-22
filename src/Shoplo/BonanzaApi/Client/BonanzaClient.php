@@ -187,7 +187,7 @@ class BonanzaClient
 			]
 		);
 
-		var_dump($rsp->getBody());
+		var_dump($rsp->getBody()->getContents());
 
 		$class = sprintf('Shoplo\\BonanzaApi\\Response\\%s', ucfirst($function) . 'Response');
 
