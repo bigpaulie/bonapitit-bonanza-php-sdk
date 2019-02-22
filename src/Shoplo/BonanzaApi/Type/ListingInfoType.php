@@ -56,7 +56,7 @@ class ListingInfoType
     /**
      * @var string
      *
-     * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u\Z'>")
+     * @Serializer\Type("string")
      */
     public $lastChangeTime;
 }
