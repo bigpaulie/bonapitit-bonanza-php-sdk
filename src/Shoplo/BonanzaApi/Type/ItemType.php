@@ -199,7 +199,7 @@ class ItemType
 	/**
 	 * @var \DateTime
 	 *
-	 * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.u\Z'>")
+	 * @Serializer\Type("DateTime<'Y-m-d\TH:i:s.uP'>")
 	 */
 	public $startTime;
 
